@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></script>-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="page">
+        <form id="form" class="js-form">
+            <div id="1" class="js-form">
+            <div class="form__group">
+                <input type="email" class="input js-input js-input-email" name="email" placeholder="Email"  >
+            </div>
+            <div class="form__group">
+                <input type="text" class="input js-input-name" name="name" placeholder="Name"  >
+            </div>
+            <div class="form__group">
+                <input type="text" class="input js-input-company" name="company" placeholder="Company"  >
+            </div>
+            <div class="form__group">
+                <input type="text" class="input js-input-country" name="country" placeholder="Country" >
+            </div>
+            <p><strong>What type of service are you looking for?</strong></p>
+            <select id="answer">
+                <option value="0" selected>-----</option>
+                <option value="s1">New Product/Macro development</option>
+                <option value="s2">SOLIDWORKS API consultancy</option>
+                <option value="s3">Other</option>
+            </select>
+
+                <div class="check-box">
+                    <input type="checkbox">
+                </div>
+<!--                <div class="g-recaptcha" data-sitekey="6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></div>-->
+            <button id="next" class="btn" type="button">
+                Next
+            </button>
+            </div>
+
+
+            <div id="2" class="js-form hidden">
+                    <div class="form__group">
+                <p><strong>What type of application do you want to develop?</strong></p>
+                <select id="answer-new-product">
+                    <option value="0" selected>-----</option>
+                    <option value="s1">VBA Macro</option>
+                    <option value="s2">Add-in</option>
+                    <option value="s3">Stand-alone application</option>
+                    <option value="s4">Not Sure</option>
+                </select>
+                    </div>
+                <div class="form__group">
+                    <p><strong>Describe the product you are looking to develop
+                    </strong></p>
+                    <input type="text" class="input js-input" placeholder="Answer" >
+                </div>
+                <div class="form__group">
+                <p><strong>Will this product be used</strong></p>
+                <select id="answer-will-this-product">
+                    <option value="0" selected>-----</option>
+                    <option value="s1">Internally in the company</option>
+                    <option value="s2">Externally (resale)</option>
+                    <option value="s3">Both</option>
+                </select>
+                </div>
+                <div class="form__group">
+                    <p><strong>Expected product delivery date</strong></p>
+                    <input id="date" type="date">
+                </div>
+                <div class="form__group">
+                    <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                    <input type="text" class="input js-input" placeholder="Answer"  >
+                </div>
+                <button class="btn" type="submit">Back</button>
+                <button class="btn" type="submit">Submit</button>
+            </div>
+
+
+            <div id="3" class="js-form hidden">
+                <div class="form__group">
+                    <p><strong>Describe the requirements</strong></p>
+                    <input type="text" class="input js-input" placeholder="Answer"  >
+                </div>
+                <div class="form__group">
+                    <p><strong>Describe the requirements</strong></p>
+                    <input id="date1" type="date">
+                </div>
+                <div class="form__group">
+                    <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                    <input type="text" class="input js-input" placeholder="Answer"  >
+                </div>
+                <button class="btn" type="submit">Back</button>
+                <button class="btn" type="submit">Submit</button>
+            </div>
+
+
+            <div id="4" class="js-form hidden">
+                <div class="form__group">
+                    <p><strong>Describe the requirements</strong></p>
+                    <input type="text" class="input js-input" placeholder="Answer"  >
+                </div>
+                <div class="form__group">
+                    <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                    <input type="text" class="input js-input" placeholder="Answer"  >
+                </div>
+                <button class="btn" type="submit">Back</button>
+                <button class="btn" type="submit">Submit</button>
+            </div>
+        </form>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
