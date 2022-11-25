@@ -11,16 +11,16 @@
         <form id="form" class="js-form">
             <div id="1" class="js-form">
             <div class="form__group">
-                <input type="email" class="input js-input js-input-email" name="email" placeholder="Email"  >
+                <input type="email" required class="input js-input js-input-email" name="email" placeholder="Email"  >
             </div>
             <div class="form__group">
-                <input type="text" class="input js-input-name" name="name" placeholder="Name"  >
+                <input type="text" required class="input js-input-name" name="name" placeholder="Name"  >
             </div>
             <div class="form__group">
-                <input type="text" class="input js-input-company" name="company" placeholder="Company"  >
+                <input type="text" required class="input js-input-company" name="company" placeholder="Company"  >
             </div>
             <div class="form__group">
-                <input type="text" class="input js-input-country" name="country" placeholder="Country" >
+                <input type="text" required class="input js-input-country" name="country" placeholder="Country" >
             </div>
             <p><strong>What type of service are you looking for?</strong></p>
             <select id="answer">
@@ -30,15 +30,11 @@
                 <option value="s3">Other</option>
             </select>
 
-                <div class="check-box">
-                    <input type="checkbox">
-                </div>
 <!--                <div class="g-recaptcha" data-sitekey="6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></div>-->
             <button id="next" class="btn" type="button">
                 Next
             </button>
             </div>
-
 
             <div id="2" class="js-form hidden">
                     <div class="form__group">
@@ -54,7 +50,7 @@
                 <div class="form__group">
                     <p><strong>Describe the product you are looking to develop
                     </strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer" >
+                    <input type="text" required class="input js-input" placeholder="Answer" >
                 </div>
                 <div class="form__group">
                 <p><strong>Will this product be used</strong></p>
@@ -71,17 +67,24 @@
                 </div>
                 <div class="form__group">
                     <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer"  >
+                    <input type="text" required class="input js-input" placeholder="Answer"  >
+                </div>
+                <div class="check-box">
+                    <p>Get a copy of the answers</p>
+                    <input type="checkbox">
+                </div>
+                <div class="check-box">
+                    <p>User registration permission</p>
+                    <input type="checkbox">
                 </div>
                 <button class="btn" type="submit">Back</button>
                 <button class="btn" type="submit">Submit</button>
             </div>
 
-
             <div id="3" class="js-form hidden">
                 <div class="form__group">
                     <p><strong>Describe the requirements</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer"  >
+                    <input type="text" required class="input js-input" placeholder="Answer"  >
                 </div>
                 <div class="form__group">
                     <p><strong>Describe the requirements</strong></p>
@@ -89,12 +92,19 @@
                 </div>
                 <div class="form__group">
                     <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer"  >
+                    <input type="text" required class="input js-input" placeholder="Answer"  >
+                </div>
+                <div class="check-box">
+                    <p>Get a copy of the answers</p>
+                    <input type="checkbox">
+                </div>
+                <div class="check-box">
+                    <p>User registration permission</p>
+                    <input type="checkbox">
                 </div>
                 <button class="btn" type="submit">Back</button>
                 <button class="btn" type="submit">Submit</button>
             </div>
-
 
             <div id="4" class="js-form hidden">
                 <div class="form__group">
@@ -103,7 +113,15 @@
                 </div>
                 <div class="form__group">
                     <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer"  >
+                    <input type="text" required class="input js-input" placeholder="Answer"  >
+                </div>
+                <div class="check-box">
+                    <p>Get a copy of the answers</p>
+                    <input type="checkbox">
+                </div>
+                <div class="check-box">
+                    <p>User registration permission</p>
+                    <input type="checkbox">
                 </div>
                 <button class="btn" type="submit">Back</button>
                 <button class="btn" type="submit">Submit</button>
