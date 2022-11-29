@@ -1,22 +1,24 @@
 let form = document.getElementById('form'),
-    form1 = document.getElementById('1')
-    form2 = document.getElementById('2'),
-    form3 = document.getElementById('3'),
-    form4 = document.getElementById('4'),
+    form1 = document.getElementById('main-block')
+    form2 = document.getElementById('main-block_1'),
+    form3 = document.getElementById('main-block_2'),
+    form4 = document.getElementById('main-block_3'),
     formInputs = document.querySelectorAll('.js-input'),
     inputEmail = document.querySelector('.js-input-email'),
     inputName = document.querySelector('.js-input-name'),
     inputCompany = document.querySelector('.js-input-company'),
     inputCountry = document.querySelector('.js-input-country');
     btnNext = document.getElementById('next')
+    btnBack = document.getElementsByName('back')
+    // btnBack1 = document.getElementById('back1')
+    // btnBack2 = document.getElementById('back2')
     answer = document.getElementById('answer')
     document.querySelector('.js-input-checkbox');
 
-    let selectValue
 
-    answer.onchange = (e) => {
-    selectValue = e.target.value
-}
+//     answer.onchange = (e) => {
+//     selectValue = e.target.value
+// }
 
 function validateEmail(email) {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -39,17 +41,53 @@ function validateCountry(country) {
     return re.test(String(country).toLowerCase());
 }
 
+let radioValue
+
+const radioBtn = document.getElementsByName('1');
+for (let i = 0, length = radioBtn.length; i < length; i++) {
+    radioBtn[i].onclick = (e) => {
+       radioValue = e.target.value
+   }
+}
+
 btnNext.onclick = () => {
     form1.classList.add('hidden')
-    switch (selectValue) {
-        case 's1' :  form2.classList.remove('hidden')
+    switch (radioValue) {
+        case '1' :  form2.classList.remove('hidden')
             break;
-        case 's2' :   form3.classList.remove('hidden')
+        case '2' :   form3.classList.remove('hidden')
             break;
-        case 's3' :   form4.classList.remove('hidden')
+        case '3' :   form4.classList.remove('hidden')
             break;
     }
 }
+// btnBack.onclick = () => {
+//     form2.classList.add('hidden')
+//     form1.classList.remove('hidden')
+// }
+for (let i = 0, length = btnBack.length; i < length; i++) {
+    btnBack[i].onclick = (e) => {
+        switch (e.target.value) {
+            case '1' :  form1.classList.remove('hidden')
+                form2.classList.add('hidden')
+                break;
+            case '2' :   form1.classList.remove('hidden')
+                form3.classList.add('hidden')
+                break;
+            case '3' :   form1.classList.remove('hidden')
+                form4.classList.add('hidden')
+                break;
+        }
+    }
+}
+// btnBack1.onclick = () => {
+//     form3.classList.add('hidden')
+//     form1.classList.remove('hidden')
+// }
+// btnBack2.onclick = () => {
+//     form4.classList.add('hidden')
+//     form1.classList.remove('hidden')
+// }
 
 form.onsubmit = function (e) {
     e.preventDefault()
