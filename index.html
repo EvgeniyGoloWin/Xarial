@@ -17,26 +17,26 @@
             <div class="form__group">
                 <p>Your email
                 </p>
-                <input type="email" required class="input js-input js-input-email" name="email" placeholder="Email"  >
+                <input type="email" class="input js-input js-input-email" name="email" placeholder="Email" required>
             </div>
             <div class="form__group">
                 <p>Name
                 </p>
-                <input type="text" required class="input js-input-name" name="name" placeholder="Name"  >
+                <input type="text" class="input js-input js-input-name" name="name" placeholder="Name" required>
             </div>
             <div class="form__group">
                 <p>Company
                 </p>
-                <input type="text" required class="input js-input-company" name="company" placeholder="Company"  >
+                <input type="text" class="input js-input js-input-company" name="company" placeholder="Company" required>
             </div>
             <div class="form__group">
                 <p>Country
                 </p>
-                <input type="text" required class="input js-input-country" name="country" placeholder="Country" >
+                <input type="text" class="input js-input js-input-country" name="country" placeholder="Country" required>
             </div>
                 <div class="form__group">
             <p><strong>What type of service are you looking for?</strong></p>
-                    <div style="display: flex;flex-direction: column;align-items: start">
+                    <div class="radioBtn">
                     <label style="display: flex;align-items: center;flex-direction: row-reverse" for="1">New Product/Macro development  <input type="radio" id="1" name="1" value="1"></label>
                     <label style="display: flex;align-items: center;flex-direction: row-reverse" for="2">SOLIDWORKS API consultancy <input type="radio" id="2" name="1" value="2"></label>
                     <label style="display: flex;align-items: center;flex-direction: row-reverse" for="3">Other <input type="radio" id="3" name="1" value="3"></label>
@@ -47,7 +47,7 @@
             <button id="next" class="btn" type="button">
                 Next
             </button>
-                <button class="btn" type="button">Clear form</button>
+                <button class="btn" type="reset">Clear form</button>
             </div>
             </div>
 
@@ -55,7 +55,7 @@
                 <h3>New Product Development</h3>
                     <div class="form__group">
                 <p><strong>What type of application do you want to develop?</strong></p>
-                        <div style="display: flex;flex-direction: column;align-items: start">
+                        <div class="radioBtn">
                             <label style="display: flex;align-items: center;flex-direction: row-reverse">VBA Macro <input type="radio" id="VBA Macro" name="select"/></label>
                             <label style="display: flex;align-items: center;flex-direction: row-reverse">Add-in <input type="radio" id="Add-in" name="select"/></label>
                             <label style="display: flex;align-items: center;flex-direction: row-reverse">Stand-alone application <input type="radio" id="Stand-alone application" name="select"/></label>
@@ -65,26 +65,23 @@
                 <div class="form__group">
                     <p><strong>Describe the product you are looking to develop
                     </strong></p>
-                    <input type="text" required class="input js-input" placeholder="Answer" >
+                    <input type="text" class="input js-input" placeholder="Answer" name="Describe" required>
                 </div>
                 <div class="form__group">
                 <p><strong>Will this product be used</strong></p>
-                    <input type="radio" id="Internally in the company" name="select"/>
-                    <label>Internally in the company</label>
-
-                    <input type="radio" id="Externally (resale)" name="select"/>
-                    <label>Externally (resale)</label>
-
-                    <input type="radio" id="Both" name="select"/>
-                    <label>Both</label>
+                    <div class="radioBtn">
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Internally in the company <input type="radio" id="Internally in the company" name="select"/></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Externally (resale) <input type="radio" id="Externally (resale)" name="select"/></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Both <input type="radio" id="Both" name="select"/></label>
+                </div>
                 </div>
                 <div class="form__group">
                     <p><strong>Expected product delivery date</strong></p>
-                    <input id="date" type="date">
+                    <input class="date" id="date" type="date" name="date" required>
                 </div>
                 <div class="form__group">
                     <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" required class="input js-input" placeholder="Answer"  >
+                    <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
                 </div>
                 <div class="check-box">
                     <p>Get a copy of the answers</p>
@@ -102,15 +99,15 @@
                 <h3>SOLIDWORKS API Consultancy</h3>
                 <div class="form__group">
                     <p><strong>Describe the requirements</strong></p>
-                    <input type="text" required class="input js-input" placeholder="Answer"  >
+                    <input type="text" class="input js-input" placeholder="Answer" name="requirements" required>
                 </div>
                 <div class="form__group">
-                    <p><strong>Describe the requirements</strong></p>
-                    <input id="date1" type="date">
+                    <p><strong>Expected service date</strong></p>
+                    <input class="date" id="date1" type="date" name="date" required>
                 </div>
                 <div class="form__group">
                     <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" required class="input js-input" placeholder="Answer"  >
+                    <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
                 </div>
                 <div class="check-box">
                     <p>Get a copy of the answers</p>
@@ -128,11 +125,11 @@
                 <h3>Other service</h3>
                 <div class="form__group">
                     <p><strong>Describe the requirements</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer"  >
+                    <input type="text" class="input js-input" placeholder="Answer" name="Describe" required>
                 </div>
                 <div class="form__group">
                     <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" required class="input js-input" placeholder="Answer"  >
+                    <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
                 </div>
                 <div class="check-box">
                     <p>Get a copy of the answers</p>
