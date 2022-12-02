@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></script>-->
+    <!--    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></script>-->
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class="page">
-        <form id="form" class="js-form">
-            <div class="form__group__header">
-                <h1>Xarial Development Services Quote
-                </h1>
-            </div>
-            <div id="main-block" class="js-form">
+    <form id="form" class="js-form">
+        <div class="form__group__header">
+            <h1>Xarial Development Services Quote
+            </h1>
+        </div>
+        <div id="main-block" class="js-form">
             <div class="form__group">
                 <p>Your email
                 </p>
@@ -27,122 +27,134 @@
             <div class="form__group">
                 <p>Company
                 </p>
-                <input type="text" class="input js-input js-input-company" name="company" placeholder="Company" required>
+                <input type="text" class="input js-input js-input-company" name="company" placeholder="Company"
+                       required>
             </div>
             <div class="form__group">
                 <p>Country
                 </p>
-                <input type="text" class="input js-input js-input-country" name="country" placeholder="Country" required>
+                <input type="text" class="input js-input js-input-country" name="country" placeholder="Country"
+                       required>
             </div>
-                <div class="form__group">
-            <p><strong>What type of service are you looking for?</strong></p>
-                    <div class="radioBtn">
-                    <label style="display: flex;align-items: center;flex-direction: row-reverse" for="1">New Product/Macro development  <input type="radio" id="1" name="1" value="1"></label>
-                    <label style="display: flex;align-items: center;flex-direction: row-reverse" for="2">SOLIDWORKS API consultancy <input type="radio" id="2" name="1" value="2"></label>
-                    <label style="display: flex;align-items: center;flex-direction: row-reverse" for="3">Other <input type="radio" id="3" name="1" value="3"></label>
-                    </div>
+            <div class="form__group">
+                <p><strong>What type of service are you looking for?</strong></p>
+                <div class="radioBtn">
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse" for="1">New
+                        Product/Macro development <input type="radio" id="1" name="1" value="1"></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse" for="2">SOLIDWORKS API
+                        consultancy <input type="radio" id="2" name="1" value="2"></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse" for="3">Other <input
+                            type="radio" id="3" name="1" value="3"></label>
                 </div>
-<!--                <div class="g-recaptcha" data-sitekey="6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></div>-->
-                <div style="display: flex;justify-content: space-between">
-            <button id="next" class="btn" type="button">
-                Next
-            </button>
+            </div>
+            <!--                <div class="g-recaptcha" data-sitekey="6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></div>-->
+            <div style="display: flex;justify-content: space-between">
+                <button id="next" class="btn">
+                    Next
+                </button>
                 <button class="btn" type="reset">Clear form</button>
             </div>
-            </div>
+        </div>
 
-            <div id="main-block_1" class="js-form hidden">
-                <h3>New Product Development</h3>
-                    <div class="form__group">
+        <div id="main-block_1" class="js-form hidden">
+            <h3>New Product Development</h3>
+            <div class="form__group">
                 <p><strong>What type of application do you want to develop?</strong></p>
-                        <div class="radioBtn">
-                            <label style="display: flex;align-items: center;flex-direction: row-reverse">VBA Macro <input type="radio" id="VBA Macro" name="select"/></label>
-                            <label style="display: flex;align-items: center;flex-direction: row-reverse">Add-in <input type="radio" id="Add-in" name="select"/></label>
-                            <label style="display: flex;align-items: center;flex-direction: row-reverse">Stand-alone application <input type="radio" id="Stand-alone application" name="select"/></label>
-                            <label style="display: flex;align-items: center;flex-direction: row-reverse">Not Sure <input type="radio" id="Not Sure" name="select"/></label>
-                        </div>
-                    </div>
-                <div class="form__group">
-                    <p><strong>Describe the product you are looking to develop
-                    </strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer" name="Describe" required>
+                <div class="radioBtn">
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">VBA Macro <input
+                            type="radio" id="VBA Macro" name="select"/></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Add-in <input
+                            type="radio" id="Add-in" name="select"/></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Stand-alone application
+                        <input type="radio" id="Stand-alone application" name="select"/></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Not Sure <input
+                            type="radio" id="Not Sure" name="select"/></label>
                 </div>
-                <div class="form__group">
+            </div>
+            <div class="form__group">
+                <p><strong>Describe the product you are looking to develop
+                </strong></p>
+                <input type="text" class="input js-input" placeholder="Answer" name="Describe" required>
+            </div>
+            <div class="form__group">
                 <p><strong>Will this product be used</strong></p>
-                    <div class="radioBtn">
-                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Internally in the company <input type="radio" id="Internally in the company" name="select"/></label>
-                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Externally (resale) <input type="radio" id="Externally (resale)" name="select"/></label>
-                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Both <input type="radio" id="Both" name="select"/></label>
+                <div class="radioBtn">
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Internally in the
+                        company <input type="radio" id="Internally in the company" name="select"/></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Externally (resale)
+                        <input type="radio" id="Externally (resale)" name="select"/></label>
+                    <label style="display: flex;align-items: center;flex-direction: row-reverse">Both <input
+                            type="radio" id="Both" name="select"/></label>
                 </div>
-                </div>
-                <div class="form__group">
-                    <p><strong>Expected product delivery date</strong></p>
-                    <input class="date" id="date" type="date" name="date" required>
-                </div>
-                <div class="form__group">
-                    <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
-                </div>
-                <div class="check-box">
-                    <p>Get a copy of the answers</p>
-                    <input type="checkbox">
-                </div>
-                <div class="check-box">
-                    <p>User registration permission</p>
-                    <input type="checkbox">
-                </div>
-                <button class="btn" name="back" value="1">Back</button>
-                <button class="btn" type="submit">Submit</button>
             </div>
+            <div class="form__group">
+                <p><strong>Expected product delivery date</strong></p>
+                <input class="date" id="date" type="date" name="date" required>
+            </div>
+            <div class="form__group">
+                <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
+            </div>
+            <div class="check-box">
+                <p>Get a copy of the answers</p>
+                <input type="checkbox">
+            </div>
+            <div class="check-box">
+                <p>User registration permission</p>
+                <input type="checkbox">
+            </div>
+            <button class="btn" name="back" value="1">Back</button>
+            <button class="btn" type="submit">Submit</button>
+        </div>
 
-            <div id="main-block_2" class="js-form hidden">
-                <h3>SOLIDWORKS API Consultancy</h3>
-                <div class="form__group">
-                    <p><strong>Describe the requirements</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer" name="requirements" required>
-                </div>
-                <div class="form__group">
-                    <p><strong>Expected service date</strong></p>
-                    <input class="date" id="date1" type="date" name="date" required>
-                </div>
-                <div class="form__group">
-                    <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
-                </div>
-                <div class="check-box">
-                    <p>Get a copy of the answers</p>
-                    <input type="checkbox">
-                </div>
-                <div class="check-box">
-                    <p>User registration permission</p>
-                    <input type="checkbox">
-                </div>
-                <button class="btn" name="back" value="2">Back</button>
-                <button class="btn" type="submit">Submit</button>
+        <div id="main-block_2" class="js-form hidden">
+            <h3>SOLIDWORKS API Consultancy</h3>
+            <div class="form__group">
+                <p><strong>Describe the requirements</strong></p>
+                <input type="text" class="input js-input" placeholder="Answer" name="requirements" required>
             </div>
+            <div class="form__group">
+                <p><strong>Expected service date</strong></p>
+                <input class="date" id="date1" type="date" name="date" required>
+            </div>
+            <div class="form__group">
+                <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
+            </div>
+            <div class="check-box">
+                <p>Get a copy of the answers</p>
+                <input type="checkbox">
+            </div>
+            <div class="check-box">
+                <p>User registration permission</p>
+                <input type="checkbox">
+            </div>
+            <button class="btn" name="back" value="2">Back</button>
+            <button class="btn" type="submit">Submit</button>
+        </div>
 
-            <div id="main-block_3" class="js-form hidden">
-                <h3>Other service</h3>
-                <div class="form__group">
-                    <p><strong>Describe the requirements</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer" name="Describe" required>
-                </div>
-                <div class="form__group">
-                    <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
-                    <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
-                </div>
-                <div class="check-box">
-                    <p>Get a copy of the answers</p>
-                    <input type="checkbox">
-                </div>
-                <div class="check-box">
-                    <p>User registration permission</p>
-                    <input type="checkbox">
-                </div>
-                <button class="btn" name="back" value="3">Back</button>
-                <button class="btn" type="submit">Submit</button>
+        <div id="main-block_3" class="js-form hidden">
+            <h3>Other service</h3>
+            <div class="form__group">
+                <p><strong>Describe the requirements</strong></p>
+                <input type="text" class="input js-input" placeholder="Answer" name="Describe" required>
             </div>
-        </form>
+            <div class="form__group">
+                <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                <input type="text" class="input js-input" placeholder="Answer" name="budget" required>
+            </div>
+            <div class="check-box">
+                <p>Get a copy of the answers</p>
+                <input type="checkbox">
+            </div>
+            <div class="check-box">
+                <p>User registration permission</p>
+                <input type="checkbox">
+            </div>
+            <button class="btn" name="back" value="3">Back</button>
+            <button class="btn" type="submit">Submit</button>
+        </div>
+    </form>
 </div>
 <script src="app.js"></script>
 </body>
