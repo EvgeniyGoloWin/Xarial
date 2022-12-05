@@ -12,12 +12,11 @@ let form = document.getElementById('form'),
     inputRadioBtn = document.querySelector('.radioBtn'),
     inputDate = document.querySelector('.date'),
     btnNext = document.getElementById('next'),
-    btnBack = document.getElementsByName('back'),
-    answer = document.getElementById('answer');
+    btnBack = document.getElementsByName('back');
+console.log(inputDate)
 let radioValue;
 let state = {
     errors: {
-
     },
 }
 
@@ -88,78 +87,15 @@ form.onsubmit = function (e) {
 
     formInputs.forEach(function (input) {
         formData.append(`${input.name}`, `${input.value}`);
-        // if (input.value === '') {
-        //     input.classList.add('error');
-        //     console.log('input not field')
-        // } else {
-        //     input.classList.remove('error');
-        // }
         console.log(input.value)
         console.log(input.name)
     });
     console.log(formData)
-    // if (emptyInputs.length !== 0) {
-    //     console.log('inputs not filled');
-    //     return false;
-    // }
-    //
-    // if(!validateEmail(emailVal)) {
-    //     console.log('email not valid');
-    //     inputEmail.classList.add('error');
-    //     return false;
-    // } else {
-    //     inputEmail.classList.remove('error');
-    // }
-    //
-    // if(!validateName(nameVal)) {
-    //     console.log('name not valid')
-    //     inputName.classList.add('error');
-    //     return false;
-    // } else {
-    //     inputName.classList.remove('error');
-    // }
-    //
-    // if(!validateCompany(companyVal)) {
-    //     console.log('company not valid')
-    //     inputCompany.classList.add('error');
-    //     return false;
-    // } else {
-    //     inputCompany.classList.remove('error');
-    // }
-    //
-    // if(!validateCountry(countryVal)) {
-    //     console.log('country not valid')
-    //     inputCountry.classList.add('error');
-    //     return false;
-    // } else {
-    //     inputCountry.classList.remove('error');
-    // }
-
-    // if(!validateRadioBtn(radioVal)) {
-    //     console.log('please make a choice')
-    //     inputRadioBtn.classList.add('error');
-    //     return false;
-    // } else {
-    //     inputRadioBtn.classList.remove('error');
-    // }
-    //
-    // if(!validateDate(dateVal)) {
-    //     console.log('please select date')
-    //     inputDate.classList.add('error');
-    //     return false;
-    // } else {
-    //     inputDate.classList.remove('error');
-    // }
 }
 
 function validation(element){
     switch (element.name) {
         case 'email':
-            // let parentBlock = element.closest('.form__group')
-            // state.errors[element.name] = validateEmail(element.value)
-            // state.errors[element.name] ?
-            //     parentBlock.closest('.form__group').classList.add('error')
-            //     : parentBlock.closest('.form__group').classList.remove('error')
             return validateEmail(element.value)
         default :
             return element.value !== ''
