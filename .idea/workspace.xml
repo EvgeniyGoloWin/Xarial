@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2748ca28-7a1e-42f9-a07a-3eff6879027d" name="Changes" comment="added validate and class for error validate">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
       <workItem from="1669993588402" duration="3079000" />
       <workItem from="1670244295494" duration="5830000" />
       <workItem from="1670333990431" duration="423000" />
-      <workItem from="1670334448001" duration="294000" />
+      <workItem from="1670334448001" duration="6300000" />
     </task>
     <task id="LOCAL-00001" summary="added validate and class for error validate">
       <created>1669996530995</created>

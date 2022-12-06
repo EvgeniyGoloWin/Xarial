@@ -167,3 +167,8 @@ h3 {
 .error {
     border-color: red;
 }
+
+.errMes {
+    color: #d93025;
+    font-size: 18px;
+}

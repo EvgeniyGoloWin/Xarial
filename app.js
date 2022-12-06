@@ -15,8 +15,10 @@ let form = document.getElementById('form'),
 service = document.getElementsByName('service');
 apBtns = document.getElementsByName("application");
 product = document.getElementsByName('product');
-copy = document.getElementsByName("copy")
-permission = document.getElementsByName("permission")
+copy = document.getElementsByName("copy"),
+permission = document.getElementsByName("permission"),
+errorMessage = document.querySelectorAll('.errMes')
+console.log(errorMessage)
 
 let radioValue;
 let appValue;
@@ -76,25 +78,31 @@ for (let i = 0, length = btnBack.length; i < length; i++) {
     }
 }
 
+const showError = document.createElement('p')
+showError.classList.add('errMes')
+showError.textContent = 'This field is required'
+
 form1.querySelectorAll(".js-input").forEach((item) => {
 
-    item.onfocus = (e) => {
+    item.onblur = (e) => {
         if (!validation(e.target)) {
             item.classList.add("errorInput")
+            item.after(showError)
             state.errors[item.name] = true;
         }
     }
     item.onchange = (e) => {
         if (e.target.value !== "") {
             item.classList.remove("errorInput")
+            showError.remove()
             delete state.errors[item.name];
         }
     }
 })
 
 
-btnNext.onclick = () => {
-
+btnNext.onclick = (e) => {
+        e.stopPropagation()
     if (!Boolean(radioValue)) {
         state.errors.serviceType = true;
         inputRadioBtn.closest('.form__group').classList.add('error')
@@ -133,15 +141,17 @@ form.onsubmit = function (e) {
     switch (radioValue) {
         case '1' :
             form2.querySelectorAll('.js-input').forEach(async function (input) {
-                input.onfocus = (e) => {
+                input.onblur = (e) => {
                     if (!validation(e.target)) {
                         input.classList.add("errorInput")
+                        item.after(showError)
                         state.errors[input.name] = true;
                     }
                 }
                 input.onchange = (e) => {
                     if (e.target.value !== "") {
                         input.classList.remove("errorInput")
+                        showError.remove()
                         delete state.errors[input.name];
                     }
                 }
@@ -155,15 +165,17 @@ form.onsubmit = function (e) {
             break;
         case '2' :
             form3.querySelectorAll('.js-input').forEach(async function (input) {
-                input.onfocus = (e) => {
+                input.onblur = (e) => {
                     if (!validation(e.target)) {
                         input.classList.add("errorInput")
+                        item.after(showError)
                         state.errors[input.name] = true;
                     }
                 }
                 input.onchange = (e) => {
                     if (e.target.value !== "") {
                         input.classList.remove("errorInput")
+                        showError.remove()
                         delete state.errors[input.name];
                     }
                 }
@@ -175,15 +187,17 @@ form.onsubmit = function (e) {
             break;
         case '3' :
             form4.querySelectorAll('.js-input').forEach(async function (input) {
-                input.onfocus = (e) => {
+                input.onblur = (e) => {
                     if (!validation(e.target)) {
                         input.classList.add("errorInput")
+                        item.after(showError)
                         state.errors[input.name] = true;
                     }
                 }
                 input.onchange = (e) => {
                     if (e.target.value !== "") {
                         input.classList.remove("errorInput")
+                        showError.remove()
                         delete state.errors[input.name];
                     }
                 }
@@ -195,15 +209,14 @@ form.onsubmit = function (e) {
             break;
     }
 
-    // const response =  fetch(`https://harial.herokuapp.com/`, {
+    // const response =  fetch(`https://test-nscu.onrender.com/form`, {
     //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     //     mode: 'cors', // no-cors, *cors, same-origin
     //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
     //     credentials: 'same-origin', // include, *same-origin, omit
     //     body: formData // body data type must match "Content-Type" header
     // });
-    // console.log(response.json())
-    // return response.json(); // parses JSON response into native JavaScript objects
+    // console.log(response)
 }
 
 function validation(element) {
