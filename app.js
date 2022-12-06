@@ -3,22 +3,15 @@ let form = document.getElementById('form'),
     form2 = document.getElementById('main-block_1'),
     form3 = document.getElementById('main-block_2'),
     form4 = document.getElementById('main-block_3'),
-    formInputs = document.querySelectorAll('.js-input'),
-    inputEmail = document.querySelector('.js-input-email'),
-    inputName = document.querySelector('.js-input-name'),
-    inputCompany = document.querySelector('.js-input-company'),
-    inputCountry = document.querySelector('.js-input-country'),
     inputRadioBtn = document.querySelector('.radioBtn'),
-    inputDate = document.querySelector('.date'),
     btnNext = document.getElementById('next'),
     btnBack = document.getElementsByName('back');
-service = document.getElementsByName('service');
-apBtns = document.getElementsByName("application");
-product = document.getElementsByName('product');
-copy = document.getElementsByName("copy"),
-permission = document.getElementsByName("permission"),
-errorMessage = document.querySelectorAll('.errMes')
-console.log(errorMessage)
+    service = document.getElementsByName('service');
+    apBtns = document.getElementsByName("application");
+    product = document.getElementsByName('product');
+    copy = document.getElementsByName("copy"),
+    permission = document.getElementsByName("permission"),
+    errorMessage = document.querySelectorAll('.errMes')
 
 let radioValue;
 let appValue;
@@ -29,6 +22,7 @@ let state = {
     errors: {},
 }
 
+const forms = [form1, form2, form3, form4]
 
 for (let i = 0, length = service.length; i < length; i++) {
     service[i].onclick = (e) => {
@@ -82,27 +76,30 @@ const showError = document.createElement('p')
 showError.classList.add('errMes')
 showError.textContent = 'This field is required'
 
-form1.querySelectorAll(".js-input").forEach((item) => {
+forms.forEach((item) => {
+    item.querySelectorAll(".js-input").forEach((item) => {
 
-    item.onblur = (e) => {
-        if (!validation(e.target)) {
-            item.classList.add("errorInput")
-            item.after(showError)
-            state.errors[item.name] = true;
+        item.onblur = (e) => {
+            if (!validation(e.target)) {
+                item.classList.add("errorInput")
+                item.after(showError)
+                state.errors[item.name] = true;
+            }
         }
-    }
-    item.onchange = (e) => {
-        if (e.target.value !== "") {
-            item.classList.remove("errorInput")
-            showError.remove()
-            delete state.errors[item.name];
+        item.onchange = (e) => {
+            if (e.target.value !== "") {
+                item.classList.remove("errorInput")
+                showError.remove()
+                delete state.errors[item.name];
+            }
         }
-    }
+    })
 })
 
 
 btnNext.onclick = (e) => {
-        e.stopPropagation()
+    e.stopPropagation()
+    e.preventDefault()
     if (!Boolean(radioValue)) {
         state.errors.serviceType = true;
         inputRadioBtn.closest('.form__group').classList.add('error')
@@ -141,20 +138,6 @@ form.onsubmit = function (e) {
     switch (radioValue) {
         case '1' :
             form2.querySelectorAll('.js-input').forEach(async function (input) {
-                input.onblur = (e) => {
-                    if (!validation(e.target)) {
-                        input.classList.add("errorInput")
-                        item.after(showError)
-                        state.errors[input.name] = true;
-                    }
-                }
-                input.onchange = (e) => {
-                    if (e.target.value !== "") {
-                        input.classList.remove("errorInput")
-                        showError.remove()
-                        delete state.errors[input.name];
-                    }
-                }
                 await formData.append(`${input.name}`, `${input.value}`);
                 console.log(`${input.name}: ${input.value}`)
             });
@@ -165,58 +148,27 @@ form.onsubmit = function (e) {
             break;
         case '2' :
             form3.querySelectorAll('.js-input').forEach(async function (input) {
-                input.onblur = (e) => {
-                    if (!validation(e.target)) {
-                        input.classList.add("errorInput")
-                        item.after(showError)
-                        state.errors[input.name] = true;
-                    }
-                }
-                input.onchange = (e) => {
-                    if (e.target.value !== "") {
-                        input.classList.remove("errorInput")
-                        showError.remove()
-                        delete state.errors[input.name];
-                    }
-                }
                 await formData.append(`${input.name}`, `${input.value}`);
-                formData.append("copy", copyValue)
-                formData.append("permission", permissionValue)
                 console.log(`${input.name}: ${input.value}`)
             });
+            formData.append("copy", copyValue)
+            formData.append("permission", permissionValue)
             break;
         case '3' :
             form4.querySelectorAll('.js-input').forEach(async function (input) {
-                input.onblur = (e) => {
-                    if (!validation(e.target)) {
-                        input.classList.add("errorInput")
-                        item.after(showError)
-                        state.errors[input.name] = true;
-                    }
-                }
-                input.onchange = (e) => {
-                    if (e.target.value !== "") {
-                        input.classList.remove("errorInput")
-                        showError.remove()
-                        delete state.errors[input.name];
-                    }
-                }
                 await formData.append(`${input.name}`, `${input.value}`);
-                formData.append("copy", copyValue)
-                formData.append("permission", permissionValue)
                 console.log(`${input.name}: ${input.value}`)
             });
+            formData.append('copy', copyValue)
+            formData.append('permission', permissionValue)
             break;
     }
 
-    // const response =  fetch(`https://test-nscu.onrender.com/form`, {
+    // const response = fetch(`https://test-nscu.onrender.com/form`, {
     //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    //     mode: 'cors', // no-cors, *cors, same-origin
-    //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    //     credentials: 'same-origin', // include, *same-origin, omit
     //     body: formData // body data type must match "Content-Type" header
     // });
-    // console.log(response)
+
 }
 
 function validation(element) {
