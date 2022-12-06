@@ -1,0 +1,99 @@
+Index: app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>let form = document.getElementById('form'),\n    form1 = document.getElementById('1')\n    form2 = document.getElementById('2'),\n    form3 = document.getElementById('3'),\n    form4 = document.getElementById('4'),\n    formInputs = document.querySelectorAll('.js-input'),\n    inputEmail = document.querySelector('.js-input-email'),\n    inputName = document.querySelector('.js-input-name'),\n    inputCompany = document.querySelector('.js-input-company'),\n    inputCountry = document.querySelector('.js-input-country');\n    btnNext = document.getElementById('next')\n    answer = document.getElementById('answer')\n    document.querySelector('.js-input-checkbox');\n\n    let selectValue\n\n    answer.onchange = (e) => {\n    selectValue = e.target.value\n}\n\nfunction validateEmail(email) {\n    let re = /^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/;\n    console.log(re)\n    return re.test(String(email).toLowerCase());\n}\n\nfunction validateName(name) {\n    let re = /[a-z]/;\n    return re.test(String(name).toLowerCase());\n}\n\nfunction validateCompany(company) {\n    let re = /[a-z]/;\n    return re.test(String(company).toLowerCase());\n}\n\nfunction validateCountry(country) {\n    let re = /[a-z]/;\n    return re.test(String(country).toLowerCase());\n}\n\nbtnNext.onclick = () => {\n    form1.classList.add('hidden')\n    switch (selectValue) {\n        case 's1' :  form2.classList.remove('hidden')\n            break;\n        case 's2' :   form3.classList.remove('hidden')\n            break;\n        case 's3' :   form4.classList.remove('hidden')\n            break;\n    }\n}\n\nform.onsubmit = function (e) {\n    e.preventDefault()\n    let emailVal = inputEmail.value,\n        nameVal = inputName.value,\n        companyVal = inputCompany.value,\n        countryVal = inputCountry.value,\n        emptyInputs = Array.from(formInputs).filter(input => input.value === '');\n\n    formInputs.forEach(function (input) {\n        if (input.value === '') {\n            input.classList.add('error');\n            console.log('input not field')\n        } else {\n            input.classList.remove('error');\n        }\n    });\n\n    if (emptyInputs.length !== 0) {\n        console.log('inputs not filled');\n        return false;\n    }\n\n    if(!validateEmail(emailVal)) {\n        console.log('email not valid');\n        inputEmail.classList.add('error');\n        return false;\n    } else {\n        inputEmail.classList.remove('error');\n    }\n\n    if(!validateName(nameVal)) {\n        console.log('name not valid')\n        inputName.classList.add('error');\n        return false;\n    } else {\n        inputName.classList.remove('error');\n    }\n\n    if(!validateCompany(companyVal)) {\n        console.log('company not valid')\n        inputCompany.classList.add('error');\n        return false;\n    } else {\n        inputCompany.classList.remove('error');\n    }\n\n    if(!validateCountry(countryVal)) {\n        console.log('country not valid')\n        inputCountry.classList.add('error');\n        return false;\n    } else {\n        inputCountry.classList.remove('error');\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app.js b/app.js
+--- a/app.js	
++++ b/app.js	
+@@ -1,5 +1,5 @@
+ let form = document.getElementById('form'),
+-    form1 = document.getElementById('1')
++    form1 = document.getElementById('1'),
+     form2 = document.getElementById('2'),
+     form3 = document.getElementById('3'),
+     form4 = document.getElementById('4'),
+@@ -7,14 +7,14 @@
+     inputEmail = document.querySelector('.js-input-email'),
+     inputName = document.querySelector('.js-input-name'),
+     inputCompany = document.querySelector('.js-input-company'),
+-    inputCountry = document.querySelector('.js-input-country');
+-    btnNext = document.getElementById('next')
+-    answer = document.getElementById('answer')
+-    document.querySelector('.js-input-checkbox');
+-
+-    let selectValue
++    inputCountry = document.querySelector('.js-input-country'),
++    btnNext = document.getElementById('next'),
++    answer = document.getElementById('answer');
++let selectValue
+ 
+-    answer.onchange = (e) => {
++document.querySelector('.js-input-checkbox');
++
++answer.onchange = (e) => {
+     selectValue = e.target.value
+ }
+ 
+@@ -42,11 +42,14 @@
+ btnNext.onclick = () => {
+     form1.classList.add('hidden')
+     switch (selectValue) {
+-        case 's1' :  form2.classList.remove('hidden')
++        case 's1' :
++            form2.classList.remove('hidden')
+             break;
+-        case 's2' :   form3.classList.remove('hidden')
++        case 's2' :
++            form3.classList.remove('hidden')
+             break;
+-        case 's3' :   form4.classList.remove('hidden')
++        case 's3' :
++            form4.classList.remove('hidden')
+             break;
+     }
+ }
+@@ -73,7 +76,7 @@
+         return false;
+     }
+ 
+-    if(!validateEmail(emailVal)) {
++    if (!validateEmail(emailVal)) {
+         console.log('email not valid');
+         inputEmail.classList.add('error');
+         return false;
+@@ -81,7 +84,7 @@
+         inputEmail.classList.remove('error');
+     }
+ 
+-    if(!validateName(nameVal)) {
++    if (!validateName(nameVal)) {
+         console.log('name not valid')
+         inputName.classList.add('error');
+         return false;
+@@ -89,7 +92,7 @@
+         inputName.classList.remove('error');
+     }
+ 
+-    if(!validateCompany(companyVal)) {
++    if (!validateCompany(companyVal)) {
+         console.log('company not valid')
+         inputCompany.classList.add('error');
+         return false;
+@@ -97,11 +100,11 @@
+         inputCompany.classList.remove('error');
+     }
+ 
+-    if(!validateCountry(countryVal)) {
++    if (!validateCountry(countryVal)) {
+         console.log('country not valid')
+         inputCountry.classList.add('error');
+         return false;
+     } else {
+         inputCountry.classList.remove('error');
+     }
+-}
+\ No newline at end of file
++}

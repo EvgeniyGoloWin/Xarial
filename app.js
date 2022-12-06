@@ -133,16 +133,16 @@ form.onsubmit = function (e) {
     switch (radioValue) {
         case '1' :
             form2.querySelectorAll('.js-input').forEach(async function (input) {
-                item.onfocus = (e) => {
+                input.onfocus = (e) => {
                     if (!validation(e.target)) {
-                        item.classList.add("errorInput")
-                        state.errors[item.name] = true;
+                        input.classList.add("errorInput")
+                        state.errors[input.name] = true;
                     }
                 }
-                item.onchange = (e) => {
+                input.onchange = (e) => {
                     if (e.target.value !== "") {
-                        item.classList.remove("errorInput")
-                        delete state.errors[item.name];
+                        input.classList.remove("errorInput")
+                        delete state.errors[input.name];
                     }
                 }
                 await formData.append(`${input.name}`, `${input.value}`);
@@ -155,16 +155,16 @@ form.onsubmit = function (e) {
             break;
         case '2' :
             form3.querySelectorAll('.js-input').forEach(async function (input) {
-                item.onfocus = (e) => {
+                input.onfocus = (e) => {
                     if (!validation(e.target)) {
-                        item.classList.add("errorInput")
-                        state.errors[item.name] = true;
+                        input.classList.add("errorInput")
+                        state.errors[input.name] = true;
                     }
                 }
-                item.onchange = (e) => {
+                input.onchange = (e) => {
                     if (e.target.value !== "") {
-                        item.classList.remove("errorInput")
-                        delete state.errors[item.name];
+                        input.classList.remove("errorInput")
+                        delete state.errors[input.name];
                     }
                 }
                 await formData.append(`${input.name}`, `${input.value}`);
@@ -175,16 +175,16 @@ form.onsubmit = function (e) {
             break;
         case '3' :
             form4.querySelectorAll('.js-input').forEach(async function (input) {
-                item.onfocus = (e) => {
+                input.onfocus = (e) => {
                     if (!validation(e.target)) {
-                        item.classList.add("errorInput")
-                        state.errors[item.name] = true;
+                        input.classList.add("errorInput")
+                        state.errors[input.name] = true;
                     }
                 }
-                item.onchange = (e) => {
+                input.onchange = (e) => {
                     if (e.target.value !== "") {
-                        item.classList.remove("errorInput")
-                        delete state.errors[item.name];
+                        input.classList.remove("errorInput")
+                        delete state.errors[input.name];
                     }
                 }
                 await formData.append(`${input.name}`, `${input.value}`);
