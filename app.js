@@ -76,15 +76,24 @@ for (let i = 0, length = btnBack.length; i < length; i++) {
     }
 }
 
-btnNext.onclick = () => {
-    form1.querySelectorAll("input.js-input").forEach((item) => {
+form1.querySelectorAll(".js-input").forEach((item) => {
 
-        if (!validation(item)) {
+    item.onfocus = (e) => {
+        if (!validation(e.target)) {
+            item.classList.add("errorInput")
             state.errors[item.name] = true;
-        } else {
+        }
+    }
+    item.onchange = (e) => {
+        if (e.target.value !== "") {
+            item.classList.remove("errorInput")
             delete state.errors[item.name];
         }
-    })
+    }
+})
+
+
+btnNext.onclick = () => {
 
     if (!Boolean(radioValue)) {
         state.errors.serviceType = true;
@@ -111,7 +120,7 @@ btnNext.onclick = () => {
     }
 }
 
-form.onsubmit =  function (e) {
+form.onsubmit = function (e) {
     e.preventDefault()
 
     let formData = new FormData();
@@ -124,6 +133,18 @@ form.onsubmit =  function (e) {
     switch (radioValue) {
         case '1' :
             form2.querySelectorAll('.js-input').forEach(async function (input) {
+                item.onfocus = (e) => {
+                    if (!validation(e.target)) {
+                        item.classList.add("errorInput")
+                        state.errors[item.name] = true;
+                    }
+                }
+                item.onchange = (e) => {
+                    if (e.target.value !== "") {
+                        item.classList.remove("errorInput")
+                        delete state.errors[item.name];
+                    }
+                }
                 await formData.append(`${input.name}`, `${input.value}`);
                 console.log(`${input.name}: ${input.value}`)
             });
@@ -134,6 +155,18 @@ form.onsubmit =  function (e) {
             break;
         case '2' :
             form3.querySelectorAll('.js-input').forEach(async function (input) {
+                item.onfocus = (e) => {
+                    if (!validation(e.target)) {
+                        item.classList.add("errorInput")
+                        state.errors[item.name] = true;
+                    }
+                }
+                item.onchange = (e) => {
+                    if (e.target.value !== "") {
+                        item.classList.remove("errorInput")
+                        delete state.errors[item.name];
+                    }
+                }
                 await formData.append(`${input.name}`, `${input.value}`);
                 formData.append("copy", copyValue)
                 formData.append("permission", permissionValue)
@@ -142,6 +175,18 @@ form.onsubmit =  function (e) {
             break;
         case '3' :
             form4.querySelectorAll('.js-input').forEach(async function (input) {
+                item.onfocus = (e) => {
+                    if (!validation(e.target)) {
+                        item.classList.add("errorInput")
+                        state.errors[item.name] = true;
+                    }
+                }
+                item.onchange = (e) => {
+                    if (e.target.value !== "") {
+                        item.classList.remove("errorInput")
+                        delete state.errors[item.name];
+                    }
+                }
                 await formData.append(`${input.name}`, `${input.value}`);
                 formData.append("copy", copyValue)
                 formData.append("permission", permissionValue)
@@ -150,15 +195,15 @@ form.onsubmit =  function (e) {
             break;
     }
 
-    const response =  fetch(`https://harial.herokuapp.com/`, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
-        body: formData // body data type must match "Content-Type" header
-    });
-    console.log(response.json())
-    return response.json(); // parses JSON response into native JavaScript objects
+    // const response =  fetch(`https://harial.herokuapp.com/`, {
+    //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    //     mode: 'cors', // no-cors, *cors, same-origin
+    //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    //     credentials: 'same-origin', // include, *same-origin, omit
+    //     body: formData // body data type must match "Content-Type" header
+    // });
+    // console.log(response.json())
+    // return response.json(); // parses JSON response into native JavaScript objects
 }
 
 function validation(element) {
