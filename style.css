@@ -49,6 +49,11 @@ form {
     border-top: 10px solid rgb(103, 58, 183);
 }
 
+.form__group__uniq {
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+}
+
 .js-form {
     width: 100vh;
 }
@@ -72,6 +77,12 @@ form {
 }
 
 .check-box {
+}
+
+.date {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
 }
 
 input[type="checkbox"] {
@@ -149,6 +160,12 @@ input:checked[type="checkbox"]::after {
 .btn:active:before,
 .btn:focus:before {
     left: 100%;
+}
+
+.container-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .hidden {

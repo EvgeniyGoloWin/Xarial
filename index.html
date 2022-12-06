@@ -37,7 +37,7 @@
                        required>
             </div>
             <div class="form__group">
-                <p><strong>What type of service are you looking for?</strong></p>
+                <p>What type of service are you looking for?</p>
                 <div class="radioBtn service">
                     <label style="display: flex;align-items: center;flex-direction: row-reverse" for="1">New
                         Product/Macro development <input type="radio" id="1" name="service" value="1"></label>
@@ -58,8 +58,8 @@
 
         <div id="main-block_1" class="js-form hidden">
             <h3>New Product Development</h3>
-            <div class="form__group">
-                <p><strong>What type of application do you want to develop?</strong></p>
+            <div class="form__group form__group__uniq">
+                <p>What type of application do you want to develop?</p>
                 <div class="radioBtn application">
                     <label style="display: flex;align-items: center;flex-direction: row-reverse">VBA Macro <input
                             type="radio" value="VBA Macro" name="application"/></label>
@@ -72,12 +72,12 @@
                 </div>
             </div>
             <div class="form__group">
-                <p><strong>Describe the product you are looking to develop
-                </strong></p>
+                <p>Describe the product you are looking to develop
+                </p>
                 <input type="text" class="input js-input" placeholder="Answer" name="Describe">
             </div>
             <div class="form__group">
-                <p><strong>Will this product be used</strong></p>
+                <p>Will this product be used</p>
                 <div class="radioBtn product">
                     <label style="display: flex;align-items: center;flex-direction: row-reverse">Internally in the
                         company <input type="radio" value="Internally in the company" name="product"/></label>
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="form__group">
-                <p><strong>Expected product delivery date</strong></p>
+                <p>Expected product delivery date</p>
                 <input class="date js-input" id="date" type="date" name="date">
             </div>
             <div class="form__group">
@@ -99,60 +99,81 @@
                 <p>Get a copy of the answers</p>
                 <input type="checkbox" name="copy">
             </div>
-            <div class="check-box">
-                <p>User registration permission</p>
-                <input type="checkbox" name="permission">
-            </div>
+<!--            <div class="check-box">-->
+<!--                <p>User registration permission</p>-->
+<!--                <input type="checkbox" name="permission">-->
+<!--            </div>-->
+            <div style="display: flex;justify-content: space-between">
+                <div>
             <button class="btn" name="back" value="1">Back</button>
             <button class="btn" type="submit">Submit</button>
+                </div>
+                <div>
+            <button class="btn" type="reset">Clear form</button>
+                </div>
+            </div>
         </div>
 
         <div id="main-block_2" class="js-form hidden">
             <h3>SOLIDWORKS API Consultancy</h3>
-            <div class="form__group">
-                <p><strong>Describe the requirements</strong></p>
+            <div class="form__group form__group__uniq">
+                <p>Describe the requirements</p>
                 <input type="text" class="input js-input" placeholder="Answer" name="requirements">
             </div>
             <div class="form__group">
-                <p><strong>Expected service date</strong></p>
+                <p>Expected service date</p>
                 <input class="date js-input" id="date1" type="date" name="date">
             </div>
             <div class="form__group">
-                <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                <p>Do you have a budget for this service, if so, please specify the range</p>
                 <input type="text" class="input js-input" placeholder="Answer" name="budget">
             </div>
             <div class="check-box">
                 <p>Get a copy of the answers</p>
                 <input type="checkbox" name="copy">
             </div>
-            <div class="check-box">
-                <p>User registration permission</p>
-                <input type="checkbox" name="permission">
-            </div>
+<!--            <div class="check-box">-->
+<!--                <p>User registration permission</p>-->
+<!--                <input type="checkbox" name="permission">-->
+<!--            </div>-->
+            <div class="container-btns">
+                <div>
             <button class="btn" name="back" value="2">Back</button>
             <button class="btn" type="submit">Submit</button>
+                </div>
+                <div>
+            <button class="btn" type="reset">Clear form</button>
+                </div>
+            </div>
         </div>
 
         <div id="main-block_3" class="js-form hidden">
             <h3>Other service</h3>
-            <div class="form__group">
-                <p><strong>Describe the requirements</strong></p>
+            <div class="form__group form__group__uniq">
+                <p>Describe the requirements</p>
                 <input type="text" class="input js-input" placeholder="Answer" name="Describe">
             </div>
             <div class="form__group">
-                <p><strong>Do you have a budget for this service, if so, please specify the range</strong></p>
+                <p>Do you have a budget for this service, if so, please specify the range</p>
                 <input type="text" class="input js-input" placeholder="Answer" name="budget">
             </div>
             <div class="check-box">
                 <p>Get a copy of the answers</p>
                 <input type="checkbox" name="copy">
             </div>
-            <div class="check-box">
-                <p>User registration permission</p>
-                <input type="checkbox" name="permission">
-            </div>
+<!--            <div class="check-box">-->
+<!--                <p>User registration permission</p>-->
+<!--                <input type="checkbox" name="permission">-->
+<!--            </div>-->
+            <div style="display: flex;justify-content: space-between">
+                <div>
             <button class="btn" name="back" value="3">Back</button>
             <button class="btn" type="submit">Submit</button>
+                </div>
+                <div>
+            <button class="btn" type="reset">Clear form</button>
+                </div>
+            </div>
         </div>
     </form>
 </div>
