@@ -29,7 +29,7 @@ form {
 
 .icon-star {
     color: #d93025;
-    padding-left: 0.25em;
+    /*padding-left: 0.25em;*/
     font-size: 16px;
     letter-spacing: .2px;
     line-height: 24px;
@@ -168,15 +168,32 @@ input:checked[type="checkbox"]::after {
     justify-content: space-between;
 }
 
+.radioBtn.service {
+    line-height: 2.5;
+    letter-spacing: .2px;
+}
+
+.radioBtn.application {
+    line-height: 2.5;
+    letter-spacing: .2px;
+}
+
+.radioBtn.product {
+    line-height: 2.5;
+    letter-spacing: .2px;
+}
+
 .hidden {
     display: none;
 }
 
 p {
     font-size: 16px;
+    letter-spacing: .2px;
 }
 
 h3 {
+    letter-spacing: .2px;
     margin: 0;
     color: white;
     padding: 12px 24px;
@@ -201,5 +218,11 @@ h3 {
 
 .errMes {
     color: #d93025;
-    font-size: 18px;
+    font-size: 14px;
+}
+
+.radioBtn label {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
 }
