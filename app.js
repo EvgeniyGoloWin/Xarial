@@ -82,6 +82,7 @@ forms.forEach((item) => {
         item.onblur = (e) => {
             if (!validation(e.target)) {
                 item.classList.add("errorInput")
+                item.parentElement.classList.add("error")
                 item.after(showError)
                 state.errors[item.name] = true;
             }
@@ -89,13 +90,16 @@ forms.forEach((item) => {
         item.onchange = (e) => {
             if (e.target.value !== "") {
                 item.classList.remove("errorInput")
+                item.parentElement.classList.remove("error")
                 showError.remove()
                 delete state.errors[item.name];
             }
         }
     })
 })
-
+//
+// const child = document.getElementById('main-block');
+// const parWithClass = child.closest('.form__group').classList.add('error')
 
 btnNext.onclick = (e) => {
     e.stopPropagation()
