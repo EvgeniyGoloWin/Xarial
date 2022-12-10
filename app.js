@@ -152,19 +152,16 @@ link.onclick = (e) => {
 
 form.onsubmit = function (e) {
     e.preventDefault()
-    console.log(e.target.value)
     let formData = new FormData();
 
     form1.querySelectorAll('.js-input').forEach(async function (input) {
         await formData.append(`${input.name}`, `${input.value}`);
-        console.log(`${input.name}: ${input.value}`)
     });
 
     switch (radioValue) {
         case '1' :
             form2.querySelectorAll('.js-input').forEach(async function (input) {
                 await formData.append(`${input.name}`, `${input.value}`);
-                console.log(`${input.name}: ${input.value}`)
             });
             formData.append("application", appValue)
             formData.append("product", productValue)
@@ -174,7 +171,6 @@ form.onsubmit = function (e) {
         case '2' :
             form3.querySelectorAll('.js-input').forEach(async function (input) {
                 await formData.append(`${input.name}`, `${input.value}`);
-                console.log(`${input.name}: ${input.value}`)
             });
             formData.append("copy", copyValue)
             formData.append("permission", permissionValue)
@@ -182,7 +178,6 @@ form.onsubmit = function (e) {
         case '3' :
             form4.querySelectorAll('.js-input').forEach(async function (input) {
                 await formData.append(`${input.name}`, `${input.value}`);
-                console.log(`${input.name}: ${input.value}`)
             });
             formData.append('copy', copyValue)
             formData.append('permission', permissionValue)
