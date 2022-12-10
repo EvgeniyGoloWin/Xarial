@@ -2,10 +2,15 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100vh;
+}
+
 body {
     display: flex;
     justify-content: center;
     font-family: 'docs-Roboto', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
 }
 
 .page {
@@ -232,4 +237,16 @@ input:first-child {
     width: 30px;
     height: 20px;
     accent-color: rgb(103, 58, 183);
+}
+
+a {
+    display: flex;
+    text-align: left;
+    color: #1a73e8;
+}
+
+.final-step {
+    /*display: none;*/
+    height: 200px;
+    width: 600px;
 }

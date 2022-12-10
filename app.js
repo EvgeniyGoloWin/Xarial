@@ -12,6 +12,8 @@ let form = document.getElementById('form'),
     copy = document.getElementsByName("copy"),
     permission = document.getElementsByName("permission"),
     errorMessage = document.querySelectorAll('.errMes')
+    dialogInfo = document.getElementById('dialog')
+    link = document.getElementById('retry')
 
 let radioValue;
 let appValue;
@@ -129,9 +131,28 @@ btnNext.onclick = (e) => {
     }
 }
 
+link.onclick = (e) => {
+    form.reset()
+    dialogInfo.classList.add('hidden')
+    form.classList.remove('hidden')
+    form1.classList.remove('hidden')
+
+    switch (radioValue) {
+        case '1' :
+            form2.classList.add('hidden')
+            break;
+        case '2' :
+            form3.classList.add('hidden')
+            break;
+        case '3' :
+            form4.classList.add('hidden')
+            break;
+    }
+}
+
 form.onsubmit = function (e) {
     e.preventDefault()
-
+    console.log(e.target.value)
     let formData = new FormData();
 
     form1.querySelectorAll('.js-input').forEach(async function (input) {
@@ -172,7 +193,8 @@ form.onsubmit = function (e) {
     //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     //     body: formData // body data type must match "Content-Type" header
     // });
-
+    form.classList.add('hidden')
+    dialogInfo.classList.remove('hidden')
 }
 
 function validation(element) {
