@@ -6,14 +6,14 @@ let form = document.getElementById('form'),
     inputRadioBtn = document.querySelector('.radioBtn'),
     btnNext = document.getElementById('next'),
     btnBack = document.getElementsByName('back');
-    service = document.getElementsByName('service');
-    apBtns = document.getElementsByName("application");
-    product = document.getElementsByName('product');
-    copy = document.getElementsByName("copy"),
+service = document.getElementsByName('service');
+apBtns = document.getElementsByName("application");
+product = document.getElementsByName('product');
+copy = document.getElementsByName("copy"),
     permission = document.getElementsByName("permission"),
     errorMessage = document.querySelectorAll('.errMes')
-    dialogInfo = document.getElementById('dialog')
-    link = document.getElementById('retry')
+dialogInfo = document.getElementById('dialog')
+link = document.getElementById('retry')
 
 let radioValue;
 let appValue;
@@ -99,9 +99,7 @@ forms.forEach((item) => {
         }
     })
 })
-//
-// const child = document.getElementById('main-block');
-// const parWithClass = child.closest('.form__group').classList.add('error')
+
 
 btnNext.onclick = (e) => {
     e.stopPropagation()
@@ -150,18 +148,18 @@ link.onclick = (e) => {
     }
 }
 
-form.onsubmit = function (e) {
+form.onsubmit = async function (e) {
     e.preventDefault()
     let formData = new FormData();
 
-    form1.querySelectorAll('.js-input').forEach(async function (input) {
-        await formData.append(`${input.name}`, `${input.value}`);
+    form1.querySelectorAll('.js-input').forEach(function (input) {
+        formData.append(`${input.name}`, `${input.value}`);
     });
 
     switch (radioValue) {
         case '1' :
-            form2.querySelectorAll('.js-input').forEach(async function (input) {
-                await formData.append(`${input.name}`, `${input.value}`);
+            await form2.querySelectorAll('.js-input').forEach(function (input) {
+                formData.append(`${input.name}`, `${input.value}`);
             });
             formData.append("application", appValue)
             formData.append("product", productValue)
@@ -169,27 +167,30 @@ form.onsubmit = function (e) {
             formData.append("permission", permissionValue)
             break;
         case '2' :
-            form3.querySelectorAll('.js-input').forEach(async function (input) {
-                await formData.append(`${input.name}`, `${input.value}`);
+            await form3.querySelectorAll('.js-input').forEach(function (input) {
+                formData.append(`${input.name}`, `${input.value}`);
             });
             formData.append("copy", copyValue)
             formData.append("permission", permissionValue)
             break;
         case '3' :
-            form4.querySelectorAll('.js-input').forEach(async function (input) {
-                await formData.append(`${input.name}`, `${input.value}`);
+            await form4.querySelectorAll('.js-input').forEach(function (input) {
+                formData.append(`${input.name}`, `${input.value}`);
             });
             formData.append('copy', copyValue)
             formData.append('permission', permissionValue)
             break;
     }
 
-    // const response = fetch(`https://test-nscu.onrender.com/form`, {
-    //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    //     body: formData // body data type must match "Content-Type" header
-    // });
     form.classList.add('hidden')
     dialogInfo.classList.remove('hidden')
+
+    await fetch(`http://localhost:8080/docs`, {
+        method: 'POST',
+        body: formData
+    });
+
+
 }
 
 function validation(element) {
