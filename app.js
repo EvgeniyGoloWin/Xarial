@@ -185,7 +185,7 @@ form.onsubmit = async function (e) {
     form.classList.add('hidden')
     dialogInfo.classList.remove('hidden')
 
-    await fetch(`http://localhost:8080/docs`, {
+    await fetch(`https://test-nscu.onrender.com/docs`, {
         method: 'POST',
         body: formData
     });
