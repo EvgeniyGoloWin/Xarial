@@ -245,6 +245,7 @@ a {
 }
 
 .final-step {
+
     /*display: none;*/
     height: 200px;
     width: 600px;
@@ -258,6 +259,14 @@ a {
 
     .input {
         width: 100%;
+    }
+
+    .final-step {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
     }
 }
 
