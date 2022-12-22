@@ -260,3 +260,8 @@ a {
         width: 100%;
     }
 }
+
+.block_btn {
+    display: flex;
+    justify-content: space-between;
+}
