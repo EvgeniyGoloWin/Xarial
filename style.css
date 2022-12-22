@@ -125,7 +125,6 @@ input:checked[type="checkbox"]::after {
 }
 
 .btn {
-    display: inline-flex;
     margin: 10px;
     text-decoration: none;
     border: 1px solid #dadce0;
@@ -249,4 +248,15 @@ a {
     /*display: none;*/
     height: 200px;
     width: 600px;
+}
+
+
+@media (max-width: 767px) {
+    .js-form {
+        width: 100%;
+    }
+
+    .input {
+        width: 100%;
+    }
 }
