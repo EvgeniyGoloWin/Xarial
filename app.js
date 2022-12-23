@@ -5,17 +5,15 @@ let form = document.getElementById('form'),
     form4 = document.getElementById('main-block_3'),
     inputRadioBtn = document.querySelector('.radioBtn'),
     btnNext = document.getElementById('next'),
-    btnBack = document.getElementsByName('back');
-service = document.getElementsByName('service');
-apBtns = document.getElementsByName("application");
-product = document.getElementsByName('product');
-copy = document.getElementsByName("copy"),
+    btnBack = document.getElementsByName('back'),
+    service = document.getElementsByName('service'),
+    apBtns = document.getElementsByName('application'),
+    product = document.getElementsByName('product'),
+    copy = document.getElementsByName("copy"),
     permission = document.getElementsByName("permission"),
-    errorMessage = document.querySelectorAll('.errMes')
-dialogInfo = document.getElementById('dialog')
-link = document.getElementById('retry')
-
-
+    errorMessage = document.querySelectorAll('.errMes'),
+    dialogInfo = document.getElementById('dialog'),
+    link = document.getElementById('retry');
 let radioValue;
 let appValue;
 let productValue
@@ -148,22 +146,47 @@ link.onclick = (e) => {
     }
 }
 
+function getQuestionnaireObject (element) {
+    const getCurrentParent = element.closest('.form__group');
+    const getQuestionText = getCurrentParent.querySelector('.question').innerText.replace(/\n/g,'').replace('*','').trim();
+    const getAnswerElement = getCurrentParent.querySelectorAll('.answer');
+    let getAnswerValue = '';
+
+    if(getAnswerElement.length > 1) {
+        getAnswerElement.forEach((item) => {
+            if (item.checked) getAnswerValue = item.value;
+        })
+    } else {
+        getAnswerValue = getAnswerElement[0].value;
+    }
+
+    return {
+        question: getQuestionText,
+        answer: getAnswerValue,
+    }
+}
+
 form.onsubmit = async function (e) {
     e.preventDefault()
     let formData = new FormData();
-    let arr = []
+    let questionnaireArray = [];
 
     form1.querySelectorAll('.js-input').forEach(function (input) {
         formData.append(`${input.name}`, `${input.value}`);
-        arr.push(`${parent}`, `${input.value}`);
     });
+    form1.querySelectorAll('.form__group').forEach(function (item) {
+        questionnaireArray.push(getQuestionnaireObject(item));
+    })
 
     switch (radioValue) {
         case '1' :
             await form2.querySelectorAll('.js-input').forEach(function (input) {
                 formData.append(`${input.name}`, `${input.value}`);
-                arr.push(`${parent}`, `${input.value}`);
             });
+            await form2.querySelectorAll('.form__group').forEach(function (item) {
+                questionnaireArray.push(getQuestionnaireObject(item));
+            })
+
             formData.append("application", appValue)
             formData.append("product", productValue)
             formData.append("copy", copyValue)
@@ -172,26 +195,38 @@ form.onsubmit = async function (e) {
         case '2' :
             await form3.querySelectorAll('.js-input').forEach(function (input) {
                 formData.append(`${input.name}`, `${input.value}`);
+                questionnaireArray.push(getQuestionnaireObject(input));
             });
+            await form3.querySelectorAll('.form__group').forEach(function (item) {
+                questionnaireArray.push(getQuestionnaireObject(item));
+            });
+
             formData.append("copy", copyValue)
             formData.append("permission", permissionValue)
             break;
         case '3' :
             await form4.querySelectorAll('.js-input').forEach(function (input) {
                 formData.append(`${input.name}`, `${input.value}`);
+                questionnaireArray.push(getQuestionnaireObject(input));
             });
+            await form4.querySelectorAll('.form__group').forEach(function (item) {
+                questionnaireArray.push(getQuestionnaireObject(item));
+            });
+
             formData.append('copy', copyValue)
             formData.append('permission', permissionValue)
             break;
     }
 
+    console.log('questionnaireArray:', questionnaireArray)
+
     form.classList.add('hidden')
     dialogInfo.classList.remove('hidden')
 
-    // await fetch(`https://test-nscu.onrender.com/docs`, {
-    //     method: 'POST',
-    //     body: formData
-    // });
+    await fetch(`https://test-nscu.onrender.com/docs`, {
+        method: 'POST',
+        body: formData
+    });
 }
 
 function validation(element) {
