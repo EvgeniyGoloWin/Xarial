@@ -15,6 +15,7 @@ copy = document.getElementsByName("copy"),
 dialogInfo = document.getElementById('dialog')
 link = document.getElementById('retry')
 
+
 let radioValue;
 let appValue;
 let productValue
@@ -100,7 +101,6 @@ forms.forEach((item) => {
     })
 })
 
-
 btnNext.onclick = (e) => {
     e.stopPropagation()
     e.preventDefault()
@@ -151,15 +151,18 @@ link.onclick = (e) => {
 form.onsubmit = async function (e) {
     e.preventDefault()
     let formData = new FormData();
+    let arr = []
 
     form1.querySelectorAll('.js-input').forEach(function (input) {
         formData.append(`${input.name}`, `${input.value}`);
+        arr.push(`${parent}`, `${input.value}`);
     });
 
     switch (radioValue) {
         case '1' :
             await form2.querySelectorAll('.js-input').forEach(function (input) {
                 formData.append(`${input.name}`, `${input.value}`);
+                arr.push(`${parent}`, `${input.value}`);
             });
             formData.append("application", appValue)
             formData.append("product", productValue)
@@ -185,12 +188,10 @@ form.onsubmit = async function (e) {
     form.classList.add('hidden')
     dialogInfo.classList.remove('hidden')
 
-    await fetch(`https://test-nscu.onrender.com/docs`, {
-        method: 'POST',
-        body: formData
-    });
-
-
+    // await fetch(`https://test-nscu.onrender.com/docs`, {
+    //     method: 'POST',
+    //     body: formData
+    // });
 }
 
 function validation(element) {

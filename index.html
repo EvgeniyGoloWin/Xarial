@@ -16,36 +16,36 @@
         </div>
         <div id="main-block" class="js-form">
             <div class="form__group">
-                <p>Your email <span class="icon-star">*</span>
+                <p class="question">Your email<span class="icon-star">*</span>
                 </p>
-                <input type="email" class="input js-input js-input-email" name="email" placeholder="Email" required>
+                <input type="email" class="input js-input js-input-email answer" name="Your email" placeholder="Email" required>
             </div>
             <div class="form__group">
-                <p>Name <span class="icon-star">*</span>
+                <p class="question">Name<span class="icon-star">*</span>
                 </p>
-                <input type="text" class="input js-input js-input-name" name="name" placeholder="Name" required>
+                <input type="text" class="input js-input js-input-name answer" name="Name" placeholder="Name" required>
             </div>
             <div class="form__group">
-                <p>Company <span class="icon-star">*</span>
+                <p class="question">Company<span class="icon-star">*</span>
                 </p>
-                <input type="text" class="input js-input js-input-company" name="company" placeholder="Company"
+                <input type="text" class="input js-input js-input-company answer" name="Company" placeholder="Company"
                        required>
             </div>
             <div class="form__group">
-                <p>Country <span class="icon-star">*</span>
+                <p class="question">Country<span class="icon-star">*</span>
                 </p>
-                <input type="text" class="input js-input js-input-country" name="country" placeholder="Country"
+                <input type="text" class="input js-input js-input-country answer" name="Country" placeholder="Country"
                        required>
             </div>
             <div class="form__group">
-                <p>What type of service are you looking for? <span class="icon-star">*</span></p>
+                <p class="question">What type of service are you looking for?<span class="icon-star">*</span></p>
                 <div class="radioBtn service">
-                    <label for="1">New
-                        Product/Macro development <input type="radio" id="1" name="service" value="1"></label>
+                    <label  for="1">New
+                        Product/Macro development <input class="answer" type="radio" id="1" name="service" value="1"></label>
                     <label for="2">SOLIDWORKS API
-                        consultancy <input type="radio" id="2" name="service" value="2"></label>
+                        consultancy <input class="answer" type="radio" id="2" name="service" value="2"></label>
                     <label for="3">Other <input
-                            type="radio" id="3" name="service" value="3"></label>
+                            class="answer" type="radio" id="3" name="service" value="3"></label>
                 </div>
             </div>
             <!--                <div class="g-recaptcha" data-sitekey="6Lda6hYjAAAAAN9InAMGduRs285rl7iFFBPv0CtC"></div>-->
@@ -60,44 +60,43 @@
         <div id="main-block_1" class="js-form hidden">
             <h3>New Product Development</h3>
             <div class="form__group form__group__uniq">
-                <p>What type of application do you want to develop? <span class="icon-star">*</span></p>
+                <p class="question">What type of application do you want to develop?<span class="icon-star">*</span></p>
                 <div class="radioBtn application">
                     <label>VBA Macro <input
-                            type="radio" value="VBA Macro" name="application"/></label>
+                            class="answer" type="radio" value="VBA Macro" name="application"/></label>
                     <label>Add-in <input
-                            type="radio" value="Add-in" name="application"/></label>
+                            class="answer" type="radio" value="Add-in" name="application"/></label>
                     <label>Stand-alone application
                         <input type="radio" value="Stand-alone application" name="application"/></label>
                     <label>Not Sure <input
-                            type="radio" value="Not Sure" name="application"/></label>
+                            class="answer" type="radio" value="Not Sure" name="application"/></label>
                 </div>
             </div>
             <div class="form__group">
-                <p>Describe the product you are looking to develop <span class="icon-star">*</span>
-                </p>
-                <input type="text" class="input js-input" placeholder="Answer" name="Describe">
+                <p class="question">Describe the product you are looking to develop<span class="icon-star">*</span></p>
+                <input type="text" class="input js-input answer" placeholder="Answer" name="Describe">
             </div>
             <div class="form__group">
-                <p>Will this product be used <span class="icon-star">*</span></p>
+                <p class="question">Will this product be used<span class="icon-star">*</span></p>
                 <div class="radioBtn product">
                     <label>Internally in the
-                        company <input type="radio" value="Internally in the company" name="product"/></label>
+                        company <input class="answer" type="radio" value="Internally in the company" name="product"/></label>
                     <label>Externally (resale)
-                        <input type="radio" value="Externally (resale)" name="product"/></label>
+                        <input class="answer" type="radio" value="Externally (resale)" name="product"/></label>
                     <label>Both <input
-                            type="radio" value="Both" name="product"/></label>
+                            class="answer" type="radio" value="Both" name="product"/></label>
                 </div>
             </div>
             <div class="form__group">
-                <p>Expected product delivery date <span class="icon-star">*</span></p>
-                <input class="date js-input" id="date" type="date" name="date">
+                <p class="question">Expected product delivery date<span class="icon-star">*</span></p>
+                <input class="date js-input answer" id="date" type="date" name="Expected product delivery date">
             </div>
             <div class="form__group">
-                <p>Do you have a budget for this service, if so, please specify the range <span class="icon-star">*</span></p>
-                <input type="text" class="input js-input" placeholder="Answer" name="budget">
+                <p class="question">Do you have a budget for this service, if so, please specify the range<span class="icon-star">*</span></p>
+                <input type="text" class="input js-input answer" placeholder="Answer" name="budget">
             </div>
             <div class="check-box">
-                <p>Get a copy of the answers</p>
+                <p class="question" >Get a copy of the answers</p>
                 <input type="checkbox" name="copy">
             </div>
 <!--            <div class="check-box">-->
@@ -119,15 +118,15 @@
             <h3>SOLIDWORKS API Consultancy</h3>
             <div class="form__group form__group__uniq">
                 <p>Describe the requirements <span class="icon-star">*</span></p>
-                <input type="text" class="input js-input" placeholder="Answer" name="requirements">
+                <input type="text" class="input js-input" placeholder="Answer" name="Describe the requirements">
             </div>
             <div class="form__group">
                 <p>Expected service date <span class="icon-star">*</span></p>
-                <input class="date js-input" id="date1" type="date" name="date">
+                <input class="date js-input" id="date1" type="date" name="Expected service date">
             </div>
             <div class="form__group">
                 <p>Do you have a budget for this service, if so, please specify the range <span class="icon-star">*</span></p>
-                <input type="text" class="input js-input" placeholder="Answer" name="budget">
+                <input type="text" class="input js-input" placeholder="Answer" name="Do you have a budget for this service, if so, please specify the range">
             </div>
             <div class="check-box">
                 <p>Get a copy of the answers</p>
@@ -152,11 +151,11 @@
             <h3>Other service</h3>
             <div class="form__group form__group__uniq">
                 <p>Describe the requirements <span class="icon-star">*</span></p>
-                <input type="text" class="input js-input" placeholder="Answer" name="Describe">
+                <input type="text" class="input js-input" placeholder="Answer" name="Describe the requirements">
             </div>
             <div class="form__group">
                 <p>Do you have a budget for this service, if so, please specify the range <span class="icon-star">*</span></p>
-                <input type="text" class="input js-input" placeholder="Answer" name="budget">
+                <input type="text" class="input js-input" placeholder="Answer" name="Do you have a budget for this service, if so, please specify the range">
             </div>
             <div class="check-box">
                 <p>Get a copy of the answers</p>
